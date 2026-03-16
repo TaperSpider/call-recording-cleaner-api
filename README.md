@@ -272,7 +272,10 @@ CALL-RECORDING-CLEANER-API
 ├── requirements.txt
 ├── host.json
 ├── local.settings.json
+├── LICENSE
+├── MODEL_LICENSE.md
 └── README.md
+
 ```
 
 ---
@@ -429,8 +432,20 @@ Potential future improvements include:
 
 ## License
 
-The source code in this repository is licensed under the **MIT License**.
+The **source code** in this repository is licensed under the **MIT License**.
 
 See the `LICENSE` file for details.
 
+### Model License
+
+The **AI audio classification model** included in this repository is licensed separately.
+
+Model files:
+
+- `audio_classifier.onnx`
+- `audio_classifier.onnx.data`
+
+These are provided for **research and evaluation purposes only**.
+
+See `MODEL_LICENSE.md` for details.
 
