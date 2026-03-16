@@ -8,7 +8,7 @@ The cleaned recordings are then used for downstream **speech analytics, transcri
 
 ---
 
-# 📑 Index
+## 📑 Index
 
 - [Overview](#overview)
 - [Problem Statement](#problem-statement)
@@ -196,7 +196,6 @@ Audio features are extracted using **MFCC (Mel-Frequency Cepstral Coefficients)*
 10. Original recording is archived
 
 ---
-
 # Output Metadata
 
 The service generates **processing metadata** for each recording.
@@ -212,3 +211,226 @@ Example output:
   "CNN_Avg_Confidence": 0.93,
   "CNN_Segments": 106
 }
+```
+
+---
+
+# API Request Example
+
+## POST Request
+
+```json
+{
+  "STORAGE_ACCOUNT": "mystorageaccount",
+  "CONTAINER": "call-recordings",
+  "INPUT_FILE": "incoming/call_123.wav",
+  "CLEANED_RECORDINGS": "cleaned",
+  "ARCHIVED_RECORDINGS": "archive"
+}
+```
+
+---
+
+## Technology Stack
+
+### AI & Machine Learning
+- **CNN Audio Classification Model**
+- **ONNX Runtime**
+- **MFCC Audio Feature Extraction**
+
+### Cloud Platform
+- **Azure Functions**
+- **Azure Blob Storage**
+- **Managed Identity Authentication**
+
+### Processing
+- **Python**
+- **Librosa** (audio processing)
+- **NumPy**
+- **SoundFile**
+
+### Automation
+- **Power Automate**
+- **Serverless Event Processing**
+
+---
+
+## Folder Structure
+
+```
+CALL-RECORDING-CLEANER-API
+│
+├── CallRecordingCleaner
+│   ├── __init__.py
+│   └── function.json
+│
+├── cleaner
+│   ├── cleaner.py
+│   ├── audio_classifier.onnx
+│   └── audio_classifier.onnx.data
+│
+├── requirements.txt
+├── host.json
+├── local.settings.json
+└── README.md
+```
+
+---
+
+## Run Locally
+
+### Install Azure Functions Core Tools
+
+```bash
+npm install -g azure-functions-core-tools@4 --unsafe-perm true
+```
+
+### Install Python Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Start Local Function
+
+```bash
+func start
+```
+
+### Local Endpoint
+
+```
+http://localhost:7071/api/CallRecordingCleaner
+```
+
+---
+
+## Deploy to Azure Functions
+
+### Login to Azure
+
+```bash
+az login
+```
+
+### Create Function App
+
+```bash
+az functionapp create \
+--resource-group myResourceGroup \
+--consumption-plan-location eastus \
+--runtime python \
+--runtime-version 3.10 \
+--functions-version 4 \
+--name ai-call-recording-cleaner \
+--storage-account mystorageaccount \
+--os-type linux
+```
+
+### Deploy Function
+
+```bash
+func azure functionapp publish ai-call-recording-cleaner
+```
+
+### API Endpoint
+
+```
+https://ai-call-recording-cleaner.azurewebsites.net/api/CallRecordingCleaner
+```
+
+---
+
+## Execute API from Postman
+
+### Method
+
+```
+POST
+```
+
+### URL
+
+```
+https://<function-app-name>.azurewebsites.net/api/CallRecordingCleaner
+```
+
+### Headers
+
+```
+Content-Type: application/json
+```
+
+### Body
+
+```json
+{
+  "STORAGE_ACCOUNT": "mystorageaccount",
+  "CONTAINER": "call-recordings",
+  "INPUT_FILE": "incoming/call_001.wav",
+  "CLEANED_RECORDINGS": "cleaned",
+  "ARCHIVED_RECORDINGS": "archive"
+}
+```
+
+---
+
+## API Response Output
+
+The API returns **metadata about the processed recording**.
+
+### Example Response
+
+```json
+{
+  "input_file": "incoming/call_001.wav",
+  "cleaned_file": "cleaned/2026-03-16/call_001_cleaned.wav",
+  "archived_file": "archive/2026-03-16/call_001.wav",
+  "container": "call-recordings",
+  "Recording_File_Name": "call_001.wav",
+  "Actual_Duration_sec": 320,
+  "Non_Speech_Duration_sec": 120,
+  "Cleaned_Duration_sec": 200,
+  "CNN_Avg_Confidence": 0.92,
+  "CNN_Segments": 106
+}
+```
+
+---
+
+## Integration in AI Call Intelligence Platforms
+
+This service is typically used as the **first stage in an AI call analytics pipeline**.
+
+### Example Pipeline
+
+1. **Call Recording Ingestion**
+2. **Audio Cleaning (AI Call Recording Cleaner API)**
+3. **Speech-to-Text Transcription**
+4. **AI Conversation Analysis**
+5. **Call Quality Scoring**
+6. **Operational Intelligence Metrics**
+7. **Analytics Dashboards (Power BI)**
+
+---
+
+## Future Enhancements
+
+Potential future improvements include:
+
+- **Speaker separation (agent vs customer)**
+- **Silence detection optimization**
+- **Real-time streaming audio cleaning**
+- **GPU-accelerated inference**
+- **Advanced noise reduction**
+- **Automatic call segmentation**
+
+---
+
+## License
+
+The source code in this repository is licensed under the **MIT License**.
+
+See the `LICENSE` file for details.
+
+
