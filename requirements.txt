@@ -1,0 +1,9 @@
+azure-functions
+azure-storage-blob
+python-dotenv
+onnxruntime
+numpy
+librosa
+onnxruntime
+soundfile
+azure-identity
