@@ -429,19 +429,6 @@ This service is typically used as the **first stage in an AI call analytics pipe
 
 ---
 
-## Future Enhancements
-
-Potential future improvements include:
-
-- **Speaker separation (agent vs customer)**
-- **Silence detection optimization**
-- **Real-time streaming audio cleaning**
-- **GPU-accelerated inference**
-- **Advanced noise reduction**
-- **Automatic call segmentation**
-
----
-
 ## License
 
 The **source code** in this repository is licensed under the **MIT License**.
