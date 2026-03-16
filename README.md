@@ -1,5 +1,15 @@
 # Call Recording Cleaner API
 
+![AI](https://img.shields.io/badge/AI-Audio%20Intelligence-blue)
+![Model](https://img.shields.io/badge/Model-CNN%20Audio%20Classifier-orange)
+![Audio](https://img.shields.io/badge/Audio-Call%20Recording%20Cleaner-blue)
+![ONNX](https://img.shields.io/badge/Model-ONNX%20Runtime-purple)
+![Speech](https://img.shields.io/badge/AI-Speech%20Analytics-green)
+![Azure](https://img.shields.io/badge/Cloud-Azure%20Functions-blue)
+![Storage](https://img.shields.io/badge/Storage-Azure%20Blob-lightblue)
+![Architecture](https://img.shields.io/badge/Architecture-Serverless-black)
+![Python](https://img.shields.io/badge/Python-3.10-yellow)
+
 **AI-powered audio preprocessing engine** designed to automatically remove **non-conversational audio segments** such as **IVR prompts, ringing tones, music, silence, and background noise** from support call recordings.
 
 The system uses a **CNN-based audio classification model deployed with ONNX Runtime** to isolate the **actual customer–agent conversation** from raw call recordings.
