@@ -147,7 +147,9 @@ This makes the service ideal for **enterprise automation pipelines where cost ef
 
 # Solution Architecture
 
-The **AI Call Recording Cleaner API** operates as part of a larger **AI call intelligence pipeline**.
+The following diagram illustrates the architecture of the **Call Recording Cleaner API** within an AI-driven call intelligence platform.
+
+[![Solution Architecture](architecture/solution-architecture.png)](architecture/solution-architecture.png)
 
 ### Processing Flow
 
